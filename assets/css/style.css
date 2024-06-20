@@ -1,0 +1,62 @@
+:root {
+    /* Font sizes */
+    --header-nav-fs: 18px;
+    --bnr-upper-row-fs: 64px;
+    --bnr-lower-row-fs: 80px;
+    --cookie-popup-fs: 14px;
+    --search-bar-fs: 18px;
+    --event-format-fs: 18px;
+    --event-title-fs: 24px;
+    --event-desc-fs: 18px;
+    --see-more-btn-fs: 18px;
+    --join-fs: 18px;
+    --ad-line-fs: 56px;
+    --carousel-title-fs: 40px;
+    --carousel-desc-fs: 18px;
+
+    /* Colors */
+    --signup-btn-clr: hsl(340, 62%, 50%);
+    --login-btn-clr: hsla(225, 58%, 24%, 1);
+    --footer-bg-clr: hsla(0, 0%, 14%, 1);
+}
+
+.header-primary {
+    width: min(100%, 1616px);
+    margin-inline: auto;
+    padding-top: 16px;
+}
+
+@media screen and (max-width: 1440px) {
+    :root {
+        --ad-line-fs: 56px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --bnr-upper-row-fs: 80px;
+        --search-bar-fs: 14px;
+        --event-format-fs: 14px;
+        --event-desc-fs: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --header-nav-fs: 24px;
+        --bnr-upper-row-fs: 56px;
+        --bnr-lower-row-fs: 56px;
+        --ad-line-fs: 32px;
+        --carousel-title-fs: 32px;
+        --carousel-desc-fs: 14px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    :root {
+        --header-nav-fs: 24px;
+        --bnr-upper-row-fs: 56px;
+        --bnr-lower-row-fs: 56px;
+    
+    }
+}
