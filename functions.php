@@ -98,7 +98,7 @@ function adjust_popup_menu_for_admin_bar() {
     if (is_admin_bar_showing()) {
         echo '
         <style type="text/css">
-            .popup-menu {
+            .popup-menu-overlay {
                 top: 46px;
             }
         </style>

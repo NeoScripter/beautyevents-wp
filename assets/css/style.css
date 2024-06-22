@@ -145,7 +145,7 @@ body {
     cursor: pointer;
 }
 
-.popup-menu {
+/* .popup-menu {
     position: fixed;
     top: 0;
     right: 0;
@@ -161,6 +161,30 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
     overflow-y: auto;
+} */
+
+.popup-menu-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(100%, 390px);
+    background-color: var(--footer-bg-clr);
+    z-index: 10;
+    transform: translateX(100%);
+    color: white;
+    transition: transform 1s ease;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-y: auto;
+}
+
+.popup-menu {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: grid;
+    gap: 32px;
+    padding: 24px 32px;
 }
 
 .popup-menu > div:last-of-type {

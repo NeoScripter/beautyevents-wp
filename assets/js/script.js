@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const burgerMenuBtn = document.querySelector('.burger-menu');
     const closeBurgerMenuBtn = document.querySelector('.close-burger-menu');
-    const popupMenu = document.querySelector('.popup-menu');
+    const popupMenu = document.querySelector('.popup-menu-overlay');
     const headerBtnGroup = document.querySelector('.header-btn-group');
     const primaryLogo = document.querySelector('.primary-logo');
     
