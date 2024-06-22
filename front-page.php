@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 
-<div class="screen-placeholder" id="screen">
-    Some text inside the placeholder
+<div class="wrapper">
+    <div class="banner">
+
+    </div>
 </div>
 
 

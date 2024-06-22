@@ -15,15 +15,139 @@
     --carousel-desc-fs: 18px;
 
     /* Colors */
-    --signup-btn-clr: hsl(340, 62%, 50%);
-    --login-btn-clr: hsla(225, 58%, 24%, 1);
     --footer-bg-clr: hsla(0, 0%, 14%, 1);
 }
+
+body {
+    overflow-x: hidden;
+    overflow-x: clip;
+    font-family: "Poppins Regular";
+}
+
+.centering {
+    width: min(100%, 1616px);
+    margin-inline: auto;
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header */
 
 .header-primary {
     width: min(100%, 1616px);
     margin-inline: auto;
+    padding-inline: 0.5em;
     padding-top: 16px;
+    position: fixed;
+    top: 32px;
+    font-size: var(--header-nav-fs);
+    text-transform: uppercase;
+    color: #fff;
+    left: 50%;
+    translate: -50%;
+}
+
+.header-primary img:first-of-type {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+}
+
+.nav ul {
+    gap: 2.5vw;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+    text-decoration: underline 0.08em;
+    text-underline-offset: 0.2em;
+}
+
+.nav a:active {
+    color: #cd3065;
+}
+
+.header-btn-group {
+    gap: 0.5em;
+}
+
+.btn-header {
+    display: flex;
+    width: fit-content;
+    height: 48px;
+    padding: 0px 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    color: inherit;
+    cursor: pointer;
+    transition: color border 0.3s ease-in-out;
+    text-transform: inherit;
+}
+
+.host-event-btn {
+    background-color: transparent;
+    border: 0.08em solid #fffefe;
+}
+
+.host-event-btn:focus-visible,
+.host-event-btn:hover,
+.host-event-btn:active {
+    border-color: #cd3065;
+    color: #cd3065;
+}
+
+.login-btn {
+    --bg-color: hsla(225, 58%, 24%, 1);
+    background-color: var(--bg-color);
+    border: 0.08em solid var(--bg-color);
+}
+
+.login-btn:focus-visible,
+.login-btn:hover,
+.login-btn:active {
+    --bg-color: #4f6486;
+}
+
+.signup-btn {
+    --bg-color: hsl(340, 62%, 50%);
+    border: 0.08em solid var(--bg-color);
+    background-color: var(--bg-color);
+}
+
+.signup-btn:focus-visible,
+.signup-btn:hover,
+.signup-btn:active {
+    --bg-color: #ae3e64;
+}
+
+.burger-menu {
+    display: none;
+    width: 56px;
+    height: 56px;
+    margin-left: 1.5em;
+    cursor: pointer;
+}
+
+/* Banner */
+
+.banner {
+    height: 1040px;
+    background-image: url(http://beautyevents.test/wp-content/uploads/2024/06/header-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
 }
 
 @media screen and (max-width: 1440px) {
@@ -39,24 +163,36 @@
         --event-format-fs: 14px;
         --event-desc-fs: 14px;
     }
+
+    .nav-primary {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .header-btn-group {
+        margin-left: auto;
+    }
 }
 
 @media screen and (max-width: 768px) {
     :root {
-        --header-nav-fs: 24px;
         --bnr-upper-row-fs: 56px;
         --bnr-lower-row-fs: 56px;
         --ad-line-fs: 32px;
         --carousel-title-fs: 32px;
         --carousel-desc-fs: 14px;
     }
+    .header-primary {
+        top: 48px;
+    }
 }
 
 @media screen and (max-width: 430px) {
     :root {
-        --header-nav-fs: 24px;
         --bnr-upper-row-fs: 56px;
         --bnr-lower-row-fs: 56px;
-    
     }
 }
