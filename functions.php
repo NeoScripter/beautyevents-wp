@@ -93,3 +93,16 @@ function hide_admin_bar_for_non_admins() {
         add_filter('show_admin_bar', '__return_false');
     }
 } */
+
+function adjust_popup_menu_for_admin_bar() {
+    if (is_admin_bar_showing()) {
+        echo '
+        <style type="text/css">
+            .popup-menu {
+                top: 46px;
+            }
+        </style>
+        ';
+    }
+}
+add_action('wp_head', 'adjust_popup_menu_for_admin_bar');

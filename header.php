@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="header header-primary flex-sb centering">
-    <img src="<?php echo get_template_directory_uri() . '/assets/images/nav-logo.png';?>" alt="logo">
+    <img src="<?php echo get_template_directory_uri() . '/assets/images/nav-logo.png';?>" alt="logo" class="primary-logo">
     <nav class="nav nav-primary">
         <ul class="flex-sb">
             <li><a href="#">Events</a></li>
@@ -22,5 +22,5 @@
         <button class="btn-header login-btn">Log in</button>
         <button class="btn-header signup-btn">Sign up</button>
     </div>
-    <img src="<?php echo get_template_directory_uri() . '/assets/images/svgs/burger-menu-closed.svg';?>" alt="burger-menu" class="burger-menu">
+    <img src="<?php echo get_template_directory_uri() . '/assets/images/svgs/burger-menu-closed.svg';?>" alt="burger-menu" class="burger-menu" tabindex="0">
 </header>

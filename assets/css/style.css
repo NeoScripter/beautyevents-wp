@@ -22,6 +22,7 @@ body {
     overflow-x: hidden;
     overflow-x: clip;
     font-family: "Poppins Regular";
+    min-height: 100vh;
 }
 
 .centering {
@@ -79,6 +80,11 @@ body {
 
 .header-btn-group {
     gap: 0.5em;
+    transition: opacity 1s ease-in-out;
+}
+
+.primary-logo {
+    transition: opacity 1s ease-in-out;
 }
 
 .btn-header {
@@ -92,7 +98,7 @@ body {
     color: inherit;
     cursor: pointer;
     transition: color border 0.3s ease-in-out;
-    text-transform: inherit;
+    text-transform: uppercase;
 }
 
 .host-event-btn {
@@ -139,6 +145,81 @@ body {
     cursor: pointer;
 }
 
+.popup-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(100%, 390px);
+    background-color: var(--footer-bg-clr);
+    z-index: 10;
+    transform: translateX(100%);
+    color: white;
+    transition: transform 1s ease;
+    display: grid;
+    gap: 32px;
+    padding: 24px 32px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-y: auto;
+}
+
+.popup-menu > div:last-of-type {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.popup-menu__logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo-small {
+    width: 70px;
+    height: 70px;
+}
+
+.close-burger-menu {
+    width: 24px;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+.popup-menu-bottom {
+    display: grid;
+    gap: 32px;
+}
+
+.popup-menu-bottom .svg-group div {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.nav-secondary ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    font-family: 'Poppins SemiBold';
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+
+.popup-menu__btn-wrapper .flex-sb {
+    margin-bottom: 16px;
+}
+
+.popup-menu__btn-wrapper .btn-header {
+    padding-inline: 48px;
+}
+
+.popup-menu__btn-wrapper .host-event-btn {
+    width: 100%;
+}
+
 /* Banner */
 
 .banner {
@@ -156,7 +237,7 @@ body {
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1044px) {
     :root {
         --bnr-upper-row-fs: 80px;
         --search-bar-fs: 14px;
@@ -187,6 +268,12 @@ body {
     }
     .header-primary {
         top: 48px;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .header-btn-group {
+        display: none;
     }
 }
 
