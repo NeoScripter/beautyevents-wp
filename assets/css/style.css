@@ -14,6 +14,9 @@
     --carousel-title-fs: 40px;
     --carousel-desc-fs: 18px;
 
+    /* Dimentions */
+    --banner-height: 1040px;
+
     /* Colors */
     --footer-bg-clr: #242424;
     --pink: #ae3e64;
@@ -91,7 +94,7 @@ body {
 
 .btn-header {
     display: flex;
-    width: fit-content;
+/*     width: fit-content; */
     height: 48px;
     padding: 0px 32px;
     justify-content: center;
@@ -146,24 +149,6 @@ body {
     margin-left: 1.5em;
     cursor: pointer;
 }
-
-/* .popup-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: min(100%, 390px);
-    background-color: var(--footer-bg-clr);
-    z-index: 10;
-    transform: translateX(100%);
-    color: white;
-    transition: transform 1s ease;
-    display: grid;
-    gap: 32px;
-    padding: 24px 32px;
-    min-height: 100vh;
-    min-height: 100dvh;
-    overflow-y: auto;
-} */
 
 .popup-menu-overlay {
     position: fixed;
@@ -229,7 +214,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease;
 }
 
 .header-svg-link:hover {
@@ -271,13 +255,14 @@ body {
     text-transform: uppercase;
 }
 
+.popup-menu__btn-wrapper .btn-header {
+    min-width: fit-content;
+    flex-grow: 100;
+}
 
 .popup-menu__btn-wrapper .flex-sb {
     margin-bottom: 16px;
-}
-
-.popup-menu__btn-wrapper .btn-header {
-    padding-inline: 48px;
+    gap: 1em;
 }
 
 .popup-menu__btn-wrapper .host-event-btn {
@@ -287,12 +272,42 @@ body {
 /* Banner */
 
 .banner {
-    height: 1040px;
+    height: var(--banner-height);
     background-image: url(http://beautyevents.test/wp-content/uploads/2024/06/header-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
+    display: grid;
+    align-items: end;
+    padding-inline: 0.5em;
+}
+
+.main-heading {
+    text-align: center;
+    font-size: var(--bnr-lower-row-fs);
+    line-height: 120%; 
+    font-weight: 700;
+    font-family: 'Poppins Bold';
+    margin-bottom: 0.7em;
+}
+
+.main-heading-span-large {
+    font-size: var(--bnr-upper-row-fs);
+}
+.banner-content {
+    width: min(100%, 933px);
+    margin-inline: auto;
+    margin-bottom: 50px;
+}
+
+.cookie-policy {
+    display: flex;
+    align-items: center;
+}
+
+.pink-font-color {
+    color: var(--pink);
 }
 
 @media screen and (max-width: 1440px) {
@@ -320,6 +335,10 @@ body {
     .header-btn-group {
         margin-left: auto;
     }
+    .banner-content {
+        margin-bottom: 0px;
+    }
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -329,10 +348,15 @@ body {
         --ad-line-fs: 32px;
         --carousel-title-fs: 32px;
         --carousel-desc-fs: 14px;
+        --banner-height: 840px;
     }
     .header-primary {
         top: 48px;
     }
+    .main-heading {
+        text-align: left;
+    }
+    
 }
 
 @media screen and (max-width: 690px) {
@@ -343,7 +367,7 @@ body {
 
 @media screen and (max-width: 430px) {
     :root {
-        --bnr-upper-row-fs: 56px;
-        --bnr-lower-row-fs: 56px;
+        --bnr-upper-row-fs: 52px;
+        --bnr-lower-row-fs: 52px;
     }
 }

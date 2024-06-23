@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    var svgObjects = document.querySelectorAll('.header-svg-link');
+/*     var svgObjects = document.querySelectorAll('.header-svg-link');
 
     svgObjects.forEach((svgObject) => {
         svgObject.addEventListener('load', function() {
@@ -39,6 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
               svgElement.style.backgroundColor = 'transparent';
             });
           });
-    });
+    }); */
 });
 
