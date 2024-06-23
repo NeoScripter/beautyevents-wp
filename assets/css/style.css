@@ -15,7 +15,9 @@
     --carousel-desc-fs: 18px;
 
     /* Colors */
-    --footer-bg-clr: hsla(0, 0%, 14%, 1);
+    --footer-bg-clr: #242424;
+    --pink: #ae3e64;
+    --link-hover: #4F6486;
 }
 
 body {
@@ -185,12 +187,12 @@ body {
     display: grid;
     gap: 32px;
     padding: 24px 32px;
+    padding-bottom: 10dvh;
 }
 
 .popup-menu > div:last-of-type {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    display: grid;
+    align-items: end;
 }
 
 .popup-menu__logo-wrapper {
@@ -215,10 +217,48 @@ body {
     gap: 32px;
 }
 
-.popup-menu-bottom .svg-group div {
+.popup-menu-bottom div {
+    width: 100%;
+}
+
+.header-svg-link {
     width: 64px;
     height: 64px;
     border-radius: 50%;
+    background-color: #FFFEFE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.header-svg-link:hover {
+    background-color: var(--link-hover);
+}
+
+.header-svg-link svg {
+    background-color: inherit;
+}
+
+.header-svg-link:hover path {
+    stroke: #fff;
+    fill: #fff;
+}
+
+.header-svg-link.insta:hover path {
+    stroke: #fff;
+    fill: none;
+}
+
+.popup-menu-bottom h3 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: var(--pink);
+}
+
+.popup-menu-bottom h4 {
+    color: #888;
+    text-transform: uppercase;
 }
 
 .nav-secondary ul {

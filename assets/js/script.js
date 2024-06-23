@@ -22,5 +22,23 @@ document.addEventListener("DOMContentLoaded", () => {
             primaryLogo.style.opacity = "1";
         });
     });
+
+
+    var svgObjects = document.querySelectorAll('.header-svg-link');
+
+    svgObjects.forEach((svgObject) => {
+        svgObject.addEventListener('load', function() {
+            var svgDoc = svgObject.contentDocument;
+            var svgElement = svgDoc.querySelector('svg');
+    
+            svgObject.parentElement.addEventListener('mouseover', function() {
+              svgElement.style.backgroundColor = 'yellow';
+            });
+    
+            svgObject.parentElement.addEventListener('mouseout', function() {
+              svgElement.style.backgroundColor = 'transparent';
+            });
+          });
+    });
 });
 

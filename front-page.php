@@ -32,10 +32,10 @@
                     <p>beautytd2022@gmail.com</p>
                 </div>
                 <div class="flex-sb svg-group">
-                    <div><img src="<?php echo get_template_directory_uri() . '/assets/images/svgs/telegram.svg';?>" alt="Telegram logo"></div>
-                    <div><img src="<?php echo get_template_directory_uri() . '/assets/images/svgs/insta.svg';?>" alt="Instagram logo"></div>
-                    <div><img src="<?php echo get_template_directory_uri() . '/assets/images/svgs/fb.svg';?>" alt="Facebook logo"></div>
-                    <div><img src="<?php echo get_template_directory_uri() . '/assets/images/svgs/pininterest.svg';?>" alt="Pininterest logo"></div>
+                    <a class="header-svg-link" href=""><?php include get_template_directory() . '/assets/images/svgs/telegram.svg'; ?></a>
+                    <a class="header-svg-link insta" href=""><?php include get_template_directory() . '/assets/images/svgs/insta.svg'; ?></a>
+                    <a class="header-svg-link" href=""><?php include get_template_directory() . '/assets/images/svgs/fb.svg'; ?></a>
+                    <a class="header-svg-link" href=""><?php include get_template_directory() . '/assets/images/svgs/pininterest.svg'; ?></a>
                 </div>
             </div>
         </div>
