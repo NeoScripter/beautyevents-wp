@@ -53,6 +53,46 @@ function add_custom_classes_to_paragraphs($content) {
     return $content;
 }
 
+// Creating a menu
+
+function remove_menu_container($args = '') {
+    $args['container'] = false;
+    return $args;
+}
+add_filter('wp_nav_menu_args', 'remove_menu_container');
+
+function strip_ul_class($menu) {
+    $menu = preg_replace('/<ul[^>]*>/', '', $menu);
+    $menu = preg_replace('/<\/ul>/', '', $menu);
+    $menu = preg_replace('/<li[^>]*>/', '', $menu);
+    $menu = preg_replace('/<\/li>/', '', $menu);
+    return $menu;
+}
+add_filter('wp_nav_menu', 'strip_ul_class');
+
+function register_menus() {
+    register_nav_menus(
+        array(
+            'top-menu' => ('Header Menu'),
+            'privacy-menu' => __('Privacy Menu')
+        )
+    );
+}
+add_action('init', 'register_menus');
+
+function allow_html_in_menu_items($title, $item, $args, $depth) {
+    return $item->post_title;
+}
+add_filter('nav_menu_item_title', 'allow_html_in_menu_items', 10, 4);
+
+// Adding svgs
+
+function cc_mime_types($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+  }
+  add_filter('upload_mimes', 'cc_mime_types');
+
 add_filter('the_content', 'add_custom_classes_to_paragraphs');
 function add_event_post_type() {
     $args = [

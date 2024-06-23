@@ -272,7 +272,7 @@ body {
 /* Banner */
 
 .banner {
-    height: var(--banner-height);
+    min-height: var(--banner-height);
     background-image: url(http://beautyevents.test/wp-content/uploads/2024/06/header-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -280,7 +280,12 @@ body {
     color: #fff;
     display: grid;
     align-items: end;
-    padding-inline: 0.5em;
+}
+
+.banner-content {
+    width: min(100%, 933px);
+    margin-inline: auto;
+    margin-bottom: 50px;
 }
 
 .main-heading {
@@ -290,24 +295,64 @@ body {
     font-weight: 700;
     font-family: 'Poppins Bold';
     margin-bottom: 0.7em;
+    padding-inline: 0.2em;
 }
 
 .main-heading-span-large {
     font-size: var(--bnr-upper-row-fs);
 }
-.banner-content {
-    width: min(100%, 933px);
-    margin-inline: auto;
-    margin-bottom: 50px;
+
+.pink-font-color {
+    color: var(--pink);
 }
 
 .cookie-policy {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 1em;
+    background-color: var(--footer-bg-clr);
+    font-size: var(--cookie-popup-fs);
+
 }
 
-.pink-font-color {
-    color: var(--pink);
+.cookie-policy p {
+    flex-shrink: 10;
+}
+
+.cookie-policy a {
+    text-transform: uppercase;
+    text-decoration: underline 0.08em;
+    text-underline-offset: 0.2em;
+}
+
+.accept-cookies-btn {
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    background-color: var(--footer-bg-clr);
+    color: inherit;
+    cursor: pointer;
+    padding: 0.3em;
+    width: 170px;
+}
+
+/* Privacy Policy */
+
+.policy-wrapper {
+    padding: 2em;
+}
+
+.policy-wrapper h1 {
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #1A2C62;
+    font-family: 'Poppins SemiBold';
+}
+
+.policy-wrapper p {
+    font-size: 18px;
+    font-weight: 500; 
 }
 
 @media screen and (max-width: 1440px) {
