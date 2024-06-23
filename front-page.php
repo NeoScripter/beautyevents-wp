@@ -19,7 +19,7 @@
                 <button class="btn-header login-btn">Log in</button>
                 <button class="btn-header signup-btn">Sign up</button>
             </div>
-            <button class="btn-header host-event-btn">Host your event</button>
+            <button class="btn-header host-event-btn">Host your event <?php include get_template_directory() . '/assets/images/svgs/top-right-corner-arrow.svg'; ?></button>
         </div>
         <div>
             <div class="popup-menu-bottom">

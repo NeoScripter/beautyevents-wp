@@ -18,7 +18,7 @@
         </ul>
     </nav>
     <div class="header-btn-group flex-sb">
-        <button class="btn-header host-event-btn">Host your event</button>
+        <button class="btn-header host-event-btn">Host your event<?php include get_template_directory() . '/assets/images/svgs/top-right-corner-arrow.svg'; ?></button>
         <button class="btn-header login-btn">Log in</button>
         <button class="btn-header signup-btn">Sign up</button>
     </div>

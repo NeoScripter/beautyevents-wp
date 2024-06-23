@@ -73,8 +73,9 @@ add_filter('wp_nav_menu', 'strip_ul_class');
 function register_menus() {
     register_nav_menus(
         array(
-            'top-menu' => ('Header Menu'),
-            'privacy-menu' => __('Privacy Menu')
+            'top-menu' => __('Header Menu'),
+            'privacy-menu' => __('Footer Menu'),
+            'bottom-menu' => __('Footer Menu')
         )
     );
 }
