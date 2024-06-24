@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="footer-flex-group-bottom">
-            <div>
+            <div class="expanded-footer-div">
                 <p>©2024 Next Beauty Events &copy;</p>
                 <p>ALL RIGHTS RESERVED</p>
             </div>
