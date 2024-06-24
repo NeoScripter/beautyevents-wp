@@ -40,7 +40,7 @@
                 'theme_location' => 'bottom-menu',
                 'items_wrap' => '%3$s',
             ));?>
-            <a href="">BACK TO TOP</a>
+            <a href="#banner">BACK TO TOP</a>
         </div>
     </div>
 </footer>

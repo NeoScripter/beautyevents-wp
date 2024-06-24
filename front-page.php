@@ -1,10 +1,11 @@
 <?php get_header(); ?>
-<body>
 <div class="popup-menu-overlay">
     <div class="popup-menu">
         <div class="popup-menu__logo-wrapper">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/nav-logo.png';?>" alt="logo" class="logo-small">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/svgs/burger-menu-open.svg';?>" alt="burger-menu" class="close-burger-menu">
+            <img src="<?php echo get_template_directory_uri() .
+                "/assets/images/nav-logo.png"; ?>" alt="logo" class="logo-small">
+            <img src="<?php echo get_template_directory_uri() .
+                "/assets/images/svgs/burger-menu-open.svg"; ?>" alt="burger-menu" class="close-burger-menu">
         </div>
         <nav class="nav nav-secondary">
             <ul class="flex-sb">
@@ -19,7 +20,8 @@
                 <button class="btn-header login-btn">Log in</button>
                 <button class="btn-header signup-btn">Sign up</button>
             </div>
-            <button class="btn-header host-event-btn">Host your event <?php include get_template_directory() . '/assets/images/svgs/top-right-corner-arrow.svg'; ?></button>
+            <button class="btn-header host-event-btn">Host your event <?php include get_template_directory() .
+                "/assets/images/svgs/top-right-corner-arrow.svg"; ?></button>
         </div>
         <div>
             <div class="popup-menu-bottom">
@@ -32,30 +34,43 @@
                     <p>beautytd2022@gmail.com</p>
                 </div>
                 <div class="flex-sb svg-group">
-                    <a class="header-svg-link" href=""><?php include get_template_directory() . '/assets/images/svgs/telegram.svg'; ?></a>
-                    <a class="header-svg-link insta" href=""><?php include get_template_directory() . '/assets/images/svgs/insta.svg'; ?></a>
-                    <a class="header-svg-link" href=""><?php include get_template_directory() . '/assets/images/svgs/fb.svg'; ?></a>
-                    <a class="header-svg-link" href=""><?php include get_template_directory() . '/assets/images/svgs/pininterest.svg'; ?></a>
+                    <a class="header-svg-link" href=""><?php include get_template_directory() .
+                        "/assets/images/svgs/telegram.svg"; ?></a>
+                    <a class="header-svg-link insta" href=""><?php include get_template_directory() .
+                        "/assets/images/svgs/insta.svg"; ?></a>
+                    <a class="header-svg-link" href=""><?php include get_template_directory() .
+                        "/assets/images/svgs/fb.svg"; ?></a>
+                    <a class="header-svg-link" href=""><?php include get_template_directory() .
+                        "/assets/images/svgs/pininterest.svg"; ?></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="wrapper">
+<div class="wrapper" id="banner">
     <div class="banner">
         <div class="banner-content">
             <h1 class="main-heading"><span class="main-heading-span-large">ALL UPCOMING</span><br>BEAUTY <span class="pink-font-color">EVENTS</span></h1>
             <div class="cookie-policy">
                 <p>This website uses cookies. Find out more in the 
-                <?php wp_nav_menu(array(
-                    'theme_location' => 'top-menu',
-                    'items_wrap' => '%3$s',
-                ));?> section, including how to opt-out.</p>
+                <?php wp_nav_menu([
+                    "theme_location" => "top-menu",
+                    "items_wrap" => '%3$s',
+                ]); ?> section, including how to opt-out.</p>
                 <button class="accept-cookies-btn">Accept all cookies</button>
             </div>
         </div>
     </div>
 </div>
+<main class="main centering">
+    <form method="get" action="<?php echo esc_url(home_url('/')); ?>" class="event-filter-form">
+        <?php include get_template_directory() . "/includes/filter-content.php"; ?>
+    </form>
+
+
+
+
+</main>
 
 
 <?php get_footer(); ?>
