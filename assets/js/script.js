@@ -94,13 +94,32 @@ document.addEventListener("DOMContentLoaded", () => {
     initFilters();
 
     function showFilters() {
-        const showFiltersBtn = document.getElementById('show-filters-btn');
-        const filters = document.querySelector('.filter-container');
-    
-        showFiltersBtn.addEventListener('click', () => {
-            filters.classList.toggle('visible-filters');
+        const showFiltersBtn = document.getElementById("show-filters-btn");
+        const filters = document.querySelector(".filter-container");
+
+        showFiltersBtn.addEventListener("click", () => {
+            filters.classList.toggle("visible-filters");
         });
     }
-    
-    showFilters();    
+
+    showFilters();
+
+    function initAjaxHandler() {
+        const seeMoreButton = document.getElementById("see-more-button");
+
+        seeMoreButton.addEventListener("click", function () {
+            let currentCount = parseInt(seeMoreButton.getAttribute("data-count"));
+            let newCount = currentCount * 2;
+
+            // Make AJAX request to fetch more events
+            fetch(`/wp-admin/admin-ajax.php?action=load_more_events&count=${newCount}`)
+                .then((response) => response.text())
+                .then((data) => {
+                    document.querySelector(".event-grid-group").innerHTML = data;
+                    seeMoreButton.setAttribute("data-count", newCount);
+                })
+                .catch((error) => console.error("Error:", error));
+        });
+    }
+    initAjaxHandler();
 });

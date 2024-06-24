@@ -135,15 +135,38 @@ function hide_admin_bar_for_non_admins() {
     }
 } */
 
-function adjust_popup_menu_for_admin_bar() {
-    if (is_admin_bar_showing()) {
-        echo '
-        <style type="text/css">
-            .popup-menu-overlay {
-                top: 46px;
-            }
-        </style>
-        ';
+function render_events($count) {
+    ob_start();
+    for ($i = 0; $i < $count; $i++) {
+        echo '<div class="event-wrapper">
+            <div class="event-content">
+                <img src="' . get_template_directory_uri() . '/assets/images/gallery-placeholder.png" alt="beauty event" class="event-img">
+                <ul class="event-ul">
+                    <li>online</li>
+                    <li>offline</li>
+                </ul>
+                <h3 class="event-title">«THE BATTLE FOR RESPECT»</h3>
+                <div class="event-desc">Join us for an exclusive beauty event focused on permanent makeup! Discover the latest techniques and trends, watch live demonstrations from top artists, and get all your questions answered. We\'re here to inspire and enhance your beauty! Entry by reservation only, limited spots available. Don\'t miss your chance to transform yourself!</div>
+                <div class="event-flex-group">
+                    <ul class="event-details">
+                        <li class="event-date">28 MAY 2024</li>
+                        <li class="event-time-zone">UTC: +03:00</li>
+                        <li class="event-venue">Moscow, Russia</li>
+                    </ul>
+                    <a href="" class="event-join">Join</a>
+                </div>
+            </div>
+        </div>';
     }
+    return ob_get_clean();
 }
-add_action('wp_head', 'adjust_popup_menu_for_admin_bar');
+
+function load_more_events() {
+    $count = isset($_GET['count']) ? intval($_GET['count']) : 11;
+
+    echo render_events($count);
+    wp_die(); 
+}
+
+add_action('wp_ajax_load_more_events', 'load_more_events');
+add_action('wp_ajax_nopriv_load_more_events', 'load_more_events');

@@ -66,7 +66,13 @@
     <form method="get" action="<?php echo esc_url(home_url('/')); ?>" class="event-filter-form">
         <?php include get_template_directory() . "/includes/filter-content.php"; ?>
     </form>
-
+    <?php 
+        $initial_count = 3;
+    ?>
+    <div class="event-grid-group">
+        <?php echo render_events($initial_count); ?>
+    </div>
+    <button id="see-more-button" data-count="<?php echo $initial_count; ?>">See More <?php include get_template_directory() . '/assets/images/svgs/top-right-corner-arrow.svg'; ?></button>
 
 
 

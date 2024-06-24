@@ -1,5 +1,4 @@
 <?php
-// Associative array with filter values for each category
 $filters = [
     'Format' => ['Online', 'Offline'],
     'category' => ['Championship', 'Exhibition', 'Conference', 'Workshop'],
