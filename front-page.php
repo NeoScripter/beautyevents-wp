@@ -63,17 +63,25 @@
     </div>
 </div>
 <main class="main centering">
-    <form method="get" action="<?php echo esc_url(home_url('/')); ?>" class="event-filter-form">
-        <?php include get_template_directory() . "/includes/filter-content.php"; ?>
-    </form>
-    <?php 
-        $initial_count = 3;
-    ?>
-    <div class="event-grid-group">
-        <?php echo render_events($initial_count); ?>
-    </div>
-    <button id="see-more-button" data-count="<?php echo $initial_count; ?>">See More <?php include get_template_directory() . '/assets/images/svgs/top-right-corner-arrow.svg'; ?></button>
-
+    <section class="event-list">
+        <form method="get" action="<?php echo esc_url(home_url('/')); ?>" class="event-filter-form">
+            <?php include get_template_directory() . "/includes/filter-content.php"; ?>
+        </form>
+        <?php
+            $initial_count = 3;
+        ?>
+        <div class="event-grid-group">
+            <?php echo render_events($initial_count); ?>
+        </div>
+        <button id="see-more-button" data-count="<?php echo $initial_count; ?>">See More <?php include get_template_directory() . '/assets/images/svgs/top-right-corner-arrow.svg'; ?></button>
+    </section>
+    <section class="ads">
+        <h2 class="ads-heading">Access events hosted <span class="ads-grey">by industry experts</span> <img src="<?php echo get_template_directory_uri() . '/assets/images/ad-img.png';?>" alt="A glass ramekin on white background with orange powder inside it with a brush soaked into it" class="ad-img"> enhance your knowledge and skills!</h2>
+        <div class="ads-grid-group">
+            <div class="ad-img-wrapper"><img src="http://beautyevents.test/wp-content/uploads/2024/06/ads-img-left.jpg" alt="Womans face upfront with bright blue eyes and a title Launch your permanent course in 1 month!" class="ad-img-bottom"></div>
+            <div class="ad-img-wrapper"><img src="http://beautyevents.test/wp-content/uploads/2024/06/ads-img-right.png" alt="Womans lap with a fashing magazine on it with a title Custom covers for your course" class="ad-img-bottom"></div>
+        </div>
+    </section>
 
 
 </main>

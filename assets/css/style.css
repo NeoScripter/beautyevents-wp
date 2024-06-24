@@ -14,6 +14,8 @@
     --see-more-btn-fs: 18px;
     --join-fs: 18px;
     --ad-line-fs: 56px;
+    --ad-heading-margin-bottom: 32px;
+    --ads-grid-gap: 40px;
     --carousel-title-fs: 40px;
     --carousel-desc-fs: 18px;
     --footer-padding-block: 40px;
@@ -70,7 +72,7 @@ body {
     left: 50%;
     translate: -50%;
     white-space: nowrap;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .header-primary img:first-of-type {
@@ -538,10 +540,10 @@ body {
 
 .filter-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 10px;
+    gap: 32px;
 }
 
 .filter-container.visible-filters {
@@ -769,7 +771,7 @@ body {
 }
 
 .event-date {
-    color: #1A2C62;
+    color: #1a2c62;
     text-transform: uppercase;
 }
 
@@ -781,7 +783,7 @@ body {
     color: var(--pink);
     border: 1.5px solid var(--pink);
     border-radius: 50px;
-    padding: 4px 16px; 
+    padding: 4px 16px;
     font-family: "Poppins Medium";
     align-self: flex-end;
 }
@@ -797,7 +799,7 @@ body {
     align-items: center;
     gap: 8px;
     text-align: center;
-    padding: 8px 24px; 
+    padding: 8px 24px;
     margin-bottom: 32px;
     background-color: #fff;
     cursor: pointer;
@@ -820,10 +822,54 @@ body {
     stroke: var(--pink);
 }
 
+/* Ads */
+
+.ads-heading {
+    font-size: var(--ad-line-fs);
+    margin-bottom: var(--ad-heading-margin-bottom);
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: 1.12px;
+    text-wrap: balance;
+    font-family: 'Poppins SemiBold';
+}
+
+.ad-img {
+    display: inline;
+    border-radius: 50px;
+    height: calc(var(--ad-line-fs) * 1.2);
+    margin-bottom: -0.2em;
+}
+
+.ads-grey {
+    color: #888;
+}
+
+.ads-grid-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--ads-grid-gap);
+    margin-bottom: 32px;
+}
+
+.ad-img-wrapper {
+    position: relative;
+}
+
+.ad-img-bottom {
+    object-fit: cover;
+}
+
 @media screen and (max-width: 1440px) {
     :root {
         --ad-line-fs: 56px;
         --event-gap: 16px;
+        --ads-grid-gap: 16px;
+    }
+    .filter-container {
+        justify-content: space-between;
+        gap: 10px;
     }
 }
 
@@ -908,6 +954,8 @@ body {
         --event-desc-fs: 14px;
         --footer-padding-block: 24px;
         --event-padding: 8px;
+        --ad-heading-margin-bottom: 24px;
+        --ads-grid-gap: 8px;
     }
 
     .nav-primary {
@@ -972,6 +1020,9 @@ body {
     .expanded-footer-div {
         width: 100%;
         margin-bottom: 16px;
+    }
+    .ads-grid-group {
+        grid-template-columns: 1fr;
     }
 }
 
