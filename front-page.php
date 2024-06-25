@@ -75,11 +75,24 @@
         </div>
         <button id="see-more-button" data-count="<?php echo $initial_count; ?>">See More <?php include get_template_directory() . '/assets/images/svgs/top-right-corner-arrow.svg'; ?></button>
     </section>
+
+        <?php
+    // Get the additional image URLs from the custom fields
+    $ad_img_left = get_field('ad_img_left');
+    $ad_img_right = get_field('ad_img_right');
+    ?>
+
     <section class="ads">
         <h2 class="ads-heading">Access events hosted <span class="ads-grey">by industry experts</span> <img src="<?php echo get_template_directory_uri() . '/assets/images/ad-img.png';?>" alt="A glass ramekin on white background with orange powder inside it with a brush soaked into it" class="ad-img"> enhance your knowledge and skills!</h2>
         <div class="ads-grid-group">
-            <div class="ad-img-wrapper"><img src="http://beautyevents.test/wp-content/uploads/2024/06/ads-img-left.jpg" alt="Womans face upfront with bright blue eyes and a title Launch your permanent course in 1 month!" class="ad-img-bottom"></div>
-            <div class="ad-img-wrapper"><img src="http://beautyevents.test/wp-content/uploads/2024/06/ads-img-right.png" alt="Womans lap with a fashing magazine on it with a title Custom covers for your course" class="ad-img-bottom"></div>
+            <div class="ad-img-wrapper">
+                <img class="ad-img-bottom" src="<?php echo esc_url($ad_img_left['url']); ?>" alt="<?php echo esc_attr(get_post_meta($ad_img_left['ID'], '_wp_attachment_image_alt', true)); ?>">
+                <a href="" class="more-details-link">More details</a>
+            </div>
+            <div class="ad-img-wrapper">
+                <img class="ad-img-bottom" src="<?php echo esc_url($ad_img_right['url']); ?>" alt="<?php echo esc_attr(get_post_meta($ad_img_right['ID'], '_wp_attachment_image_alt', true)); ?>">
+                <a href="" class="more-details-link">More details</a>
+            </div>
         </div>
     </section>
 
