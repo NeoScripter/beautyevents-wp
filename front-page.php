@@ -64,34 +64,74 @@
 </div>
 <main class="main centering">
     <section class="event-list">
-        <form method="get" action="<?php echo esc_url(home_url('/')); ?>" class="event-filter-form">
-            <?php include get_template_directory() . "/includes/filter-content.php"; ?>
+        <form method="get" action="<?php echo esc_url(
+            home_url("/")
+        ); ?>" class="event-filter-form">
+            <?php include get_template_directory() .
+                "/includes/filter-content.php"; ?>
         </form>
-        <?php
-            $initial_count = 3;
-        ?>
+        <?php $initial_count = 3; ?>
         <div class="event-grid-group">
             <?php echo render_events($initial_count); ?>
         </div>
-        <button id="see-more-button" data-count="<?php echo $initial_count; ?>">See More <?php include get_template_directory() . '/assets/images/svgs/top-right-corner-arrow.svg'; ?></button>
+        <button id="see-more-button" data-count="<?php echo $initial_count; ?>">See More <?php include get_template_directory() .
+    "/assets/images/svgs/top-right-corner-arrow.svg"; ?></button>
     </section>
 
         <?php
-    // Get the additional image URLs from the custom fields
-    $ad_img_left = get_field('ad_img_left');
-    $ad_img_right = get_field('ad_img_right');
-    ?>
+        $ad_img_left = get_field("ad_img_left");
+        $ad_img_right = get_field("ad_img_right");
+        ?>
 
     <section class="ads">
-        <h2 class="ads-heading">Access events hosted <span class="ads-grey">by industry experts</span> <img src="<?php echo get_template_directory_uri() . '/assets/images/ad-img.png';?>" alt="A glass ramekin on white background with orange powder inside it with a brush soaked into it" class="ad-img"> enhance your knowledge and skills!</h2>
+        <h2 class="ads-heading">Access events hosted <span class="ads-grey">by industry experts</span> <img src="<?php echo get_template_directory_uri() .
+            "/assets/images/ad-img.png"; ?>" alt="A glass ramekin on white background with orange powder inside it with a brush soaked into it" class="ad-img"> enhance your knowledge and skills!</h2>
         <div class="ads-grid-group">
             <div class="ad-img-wrapper">
-                <img class="ad-img-bottom" src="<?php echo esc_url($ad_img_left['url']); ?>" alt="<?php echo esc_attr(get_post_meta($ad_img_left['ID'], '_wp_attachment_image_alt', true)); ?>">
+                <img class="ad-img-bottom" 
+                    src="<?php echo esc_url($ad_img_left["url"]); ?>" 
+                    alt="<?php echo esc_attr(get_post_meta($ad_img_left["ID"], "_wp_attachment_image_alt", true)); ?>">
                 <a href="" class="more-details-link">More details</a>
             </div>
             <div class="ad-img-wrapper">
-                <img class="ad-img-bottom" src="<?php echo esc_url($ad_img_right['url']); ?>" alt="<?php echo esc_attr(get_post_meta($ad_img_right['ID'], '_wp_attachment_image_alt', true)); ?>">
+                <img class="ad-img-bottom" 
+                    src="<?php echo esc_url($ad_img_right["url"]); ?>" 
+                    alt="<?php echo esc_attr(get_post_meta($ad_img_right["ID"], "_wp_attachment_image_alt", true)); ?>">
                 <a href="" class="more-details-link">More details</a>
+            </div>
+        </div>
+        <h3 class="ads-small-heading">Beauty. collaborative excellence.</h3>
+        <h2 class="ads-heading flex-sb">Broaden your network
+            <div class="arrow-holder flex-sb">
+                <div class="carousel-arrow prev"><?php include get_template_directory() . "/assets/images/svgs/carousel-arrow-left.svg"; ?></div>
+                <div class="carousel-arrow next"><?php include get_template_directory() . "/assets/images/svgs/carousel-arrow-right.svg"; ?></div>
+            </div>
+        </h2>
+        <?php
+        $ad_img_left = get_field("ad_img_left");
+        $ad_img_right = get_field("ad_img_right");
+        ?>
+        <div class="carousel-wrapper">
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                <?php 
+            if( have_rows('partner_ads') ): 
+                while( have_rows('partner_ads') ): the_row(); 
+                    $image = get_sub_field('image');
+                    $link = get_sub_field('link'); 
+            ?>
+            <li class="carousel-slide">
+                <a href="<?php echo esc_url($link); ?>">
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" width="464">
+                </a>
+            </li>
+            <?php 
+                endwhile; 
+            else:
+                echo '<li>No partner ads found.</li>'; // Optional: to handle cases with no ads
+            endif;
+            ?>
+                </ul>
             </div>
         </div>
     </section>

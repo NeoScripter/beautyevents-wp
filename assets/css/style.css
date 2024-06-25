@@ -834,7 +834,7 @@ body {
     line-height: 140%;
     letter-spacing: 1.12px;
     text-wrap: balance;
-    font-family: 'Poppins SemiBold';
+    font-family: "Poppins SemiBold";
 }
 
 .ad-img {
@@ -865,7 +865,7 @@ body {
 
 .ad-img-wrapper:last-of-type:after {
     padding: 0.5em 1.5em 0.5em 0.5em;
-    content: 'custom covers for your course';
+    content: "custom covers for your course";
     position: absolute;
     top: 0;
     left: 0;
@@ -876,9 +876,9 @@ body {
     font-family: "Poppins SemiBold";
     font-size: var(--ad-pseudo-el-fs);
     font-weight: 600;
-    line-height: 120%; 
+    line-height: 120%;
     letter-spacing: -1.4px;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     word-wrap: balance;
 }
 .more-details-link {
@@ -891,7 +891,7 @@ body {
     cursor: pointer;
     border: 1px solid #fff;
     border-radius: 50px;
-    font-size: 18px; 
+    font-size: 18px;
     padding: 8px 16px;
     width: fit-content;
     z-index: 3;
@@ -900,6 +900,67 @@ body {
 .more-details-link:is(:hover, :focus, :active) {
     color: var(--pink);
     border-color: var(--pink);
+}
+
+.ads-small-heading {
+    color: var(--disable-gray, #888);
+    font-family: "Poppins Medium";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;
+}
+
+/* Carousel */
+
+.arrow-holder {
+    width: 112px;
+}
+
+.carousel-arrow {
+    cursor: pointer;
+    display: flex;
+    padding: 12px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 20px;
+    border: 0.025em solid var(--body-txt, #242424);
+}
+
+.carousel-arrow:is(:hover, :focus) {
+    border-color: var(--pink);
+}
+
+.carousel-arrow:is(:hover, :focus) path {
+    fill: var(--pink);
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.carousel-slide {
+    min-width: 464px;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 1440px) {
@@ -1021,6 +1082,9 @@ body {
     .event-filter-form {
         padding-block: 24px;
     }
+    .arrow-holder {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1033,7 +1097,6 @@ body {
         --banner-height: 840px;
         --event-gap: 8px;
         --ad-pseudo-el-fs: 58px;
-
     }
     .main-heading {
         text-align: left;
