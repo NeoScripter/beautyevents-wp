@@ -114,23 +114,30 @@
         <div class="carousel-wrapper">
             <div class="carousel-track-container">
                 <ul class="carousel-track">
-                <?php 
-            if( have_rows('partner_ads') ): 
-                while( have_rows('partner_ads') ): the_row(); 
-                    $image = get_sub_field('image');
-                    $link = get_sub_field('link'); 
-            ?>
-            <li class="carousel-slide">
-                <a href="<?php echo esc_url($link); ?>">
-                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" width="464">
-                </a>
-            </li>
-            <?php 
-                endwhile; 
-            else:
-                echo '<li>No partner ads found.</li>'; // Optional: to handle cases with no ads
-            endif;
-            ?>
+                <?php
+                $num_ads = 20;
+                $ads_found = false;
+
+                for ($i = 1; $i <= $num_ads; $i++) {
+
+                    $image = get_field("partner_ad_image_" . $i);
+                    $link = get_field("partner_ad_link_" . $i);
+
+                    if (!$image || !$link) {
+                        break;
+                    }
+
+                    $ads_found = true;
+                    ?>
+                        <li class="carousel-slide">
+                            <a href="<?php echo esc_url($link); ?>">
+                                <img src="<?php echo esc_url($image["url"]); ?>" 
+                                alt="<?php echo esc_attr($image["alt"]); ?>">
+                            </a>
+                        </li>
+                    <?php
+                }
+                ?>
                 </ul>
             </div>
         </div>

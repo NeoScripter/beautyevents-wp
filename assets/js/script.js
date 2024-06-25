@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const slideWidth = slides[0].getBoundingClientRect().width;
 
         const setSlidePosition = (slide, index) => {
-            slide.style.left = slideWidth * index + "px";
+            slide.style.left = (slideWidth + 40) * index + "px";
         };
         slides.forEach(setSlidePosition);
 
@@ -163,4 +163,13 @@ document.addEventListener("DOMContentLoaded", () => {
         slides[0].classList.add("current-slide");
     }
     initCarouselControls();
+
+    window.addEventListener('scroll', function() {
+        const navMenu = document.querySelector('.header-primary');
+        if (window.scrollY > 1000) {
+          navMenu.classList.add('sticky-header');
+        } else {
+          navMenu.classList.remove('sticky-header');
+        }
+      });
 });
