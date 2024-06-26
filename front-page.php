@@ -143,7 +143,7 @@
         </div>
     </section>
     <section class="steps-section" id="about-us">
-        <h2 class="steps-heading">beauty training<span class="pink-font-color">&design</span></h2>
+        <h2 class="steps-heading">beauty training <span class="pink-font-color">&design</span></h2>
         <div class="steps-heading-main-flex-group">
             <div class="steps-heading__left-flex-group">
                 <?php include get_template_directory() . "/assets/images/svgs/black-line.svg"; ?>
