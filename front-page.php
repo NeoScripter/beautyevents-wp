@@ -227,7 +227,6 @@
         </div>
         <h3 class="steps-heading-bottom">Teach stylishly and effortlessly</h3>
     </section>
-
 </main>
 
 
