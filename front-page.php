@@ -160,7 +160,42 @@
             </div>
         </div>
         <div class="steps-gallery-wrapper">
-
+            <div class="steps-gallery-flex-subgroup">
+                <img src="<?php echo get_template_directory_uri() .
+                "/assets/images/steps-1.png"; ?>" alt="A woman with long hair resting her head on her knee, accompanied by a red square logo featuring 'OLAPMU' text and the words 'Permanent Makeup' below it.">
+                <div class="steps-gallery__img-desc">
+                    <img src="<?php echo get_template_directory_uri() .
+                    "/assets/images/svgs/step-1.svg"; ?>" alt="Number 01 written in bold black font.">
+                    <div class="gallery__img-desc-content">
+                        <h5>Tailored <span class="pink-font-color uppercase-span">DESIGN</span> for your beauty business</h5>
+                        <p>From branding and logo design to presentation slides, educational materials, posters, and banners.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="steps-gallery-flex-subgroup">
+                <img src="<?php echo get_template_directory_uri() .
+                "/assets/images/steps-2.png"; ?>" alt="A spiral-bound study book titled 'Basic Course: Permanent Makeup' displayed on a pink podium with opened pages showing detailed illustrations and information on skin anatomy, eyebrow mapping, and permanent makeup techniques.">
+                <div class="steps-gallery__img-desc">
+                    <img src="<?php echo get_template_directory_uri() .
+                    "/assets/images/svgs/step-2.svg"; ?>" alt="Number 02 written in bold black font.">
+                    <div class="gallery__img-desc-content">
+                        <h5><span class="pink-font-color uppercase-span">READY-TO-USE</span> training materials</h5>
+                        <p>for permanent makeup specialists and trainers, featuring custom covers, practical exercises, and content crafted by experts with over 7 years of experience. Available in 8 languages.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="steps-gallery-flex-subgroup">
+                <img src="<?php echo get_template_directory_uri() .
+                "/assets/images/steps-3.png"; ?>" alt="A computer monitor displaying beauty training materials, including a color wheel and makeup application guides. Floating above the monitor are additional screens showing color correction charts and makeup techniques.">
+                <div class="steps-gallery__img-desc">
+                    <img src="<?php echo get_template_directory_uri() .
+                    "/assets/images/svgs/step-3.svg"; ?>" alt="Number 02 written in bold black font.">
+                    <div class="gallery__img-desc-content">
+                        <h5><span class="pink-font-color uppercase-span">QUICK</span> Launch</h5>
+                        <p>of your permanent makeup course or workshop.</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="steps-carousel">
             <div class="steps-carousel-track-container">

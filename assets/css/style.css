@@ -334,6 +334,10 @@ body {
     color: var(--pink);
 }
 
+.uppercase-span {
+    text-transform: uppercase;
+}
+
 .cookie-policy {
     display: flex;
     align-items: center;
@@ -982,6 +986,12 @@ body {
     --_block-offset: 37px;
     --_steps-heading-fs: 36px;
     --_steps-heading-bottom-fs: 40px;
+    --_gallery-wrapper-gap: 16px;
+    --_gallery-subgroup-gap: 8px;
+    --_steps-paragraph-fs: 14px;
+    --_steps-icon-content-fs: 24px;
+    --_steps-gallery-h5-fs: 18px;
+
     border-image-source: conic-gradient(#ebebeb 0 0);
     border-image-slice: 0 fill;
     border-image-width: var(--_block-offset) 0px;
@@ -989,7 +999,6 @@ body {
     position: relative;
     display: grid;
     align-items: start;
-    height: 1000px;
 }
 
 .steps-heading {
@@ -1011,7 +1020,71 @@ body {
     text-transform: uppercase;
 }
 
-/* start */
+.steps-heading-main-flex-group {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.steps-heading__left-flex-group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.steps-heading__right-flex-group {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.steps-heading__right-flex-group h4 {
+    font-size: var(--_steps-icon-content-fs);
+    font-family: 'Poppins Medium';
+    font-weight: 600;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.steps-heading__left-flex-group p {
+    font-size: var(--_steps-paragraph-fs);
+}
+
+.steps-gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--_gallery-wrapper-gap);
+    margin-block: var(--_gallery-wrapper-gap);
+
+}
+
+.steps-gallery-flex-subgroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--_gallery-subgroup-gap);
+}
+
+.steps-gallery__img-desc {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    gap: 8px;
+}
+
+.gallery__img-desc-content h5 {
+    font-size: var(--_steps-gallery-h5-fs);
+    font-family: 'Poppins Medium';
+    font-weight: 500;
+}
+
+.gallery__img-desc-content p {
+    font-size: var(--_steps-paragraph-fs);
+}
+
+/* Steps carousel start */
 
 .steps-carousel {
     position: relative;
@@ -1089,7 +1162,7 @@ body {
     background-color: #fff;
 }
 
-/* end */
+/* Steps carousel end */
 
 .steps-svg-link {
     width: 56px;
