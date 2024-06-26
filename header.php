@@ -11,10 +11,10 @@
     <img src="<?php echo get_template_directory_uri() . '/assets/images/nav-logo.png';?>" alt="logo" class="primary-logo">
     <nav class="nav nav-primary">
         <ul class="flex-sb">
-            <li><a href="#">Events</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Our partners</a></li>
-            <li><a href="#">Contacts</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#about-us">About us</a></li>
+            <li><a href="#partners">Our partners</a></li>
+            <li><a href="#contacts">Contacts</a></li>
         </ul>
     </nav>
     <div class="header-btn-group flex-sb">

@@ -9,10 +9,10 @@
         </div>
         <nav class="nav nav-secondary">
             <ul class="flex-sb">
-                <li><a href="#">Events</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Our partners</a></li>
-                <li><a href="#">Contacts</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#about-us">About us</a></li>
+                <li><a href="#partners">Our partners</a></li>
+                <li><a href="#contacts">Contacts</a></li>
             </ul>
         </nav>
         <div class="popup-menu__btn-wrapper">
@@ -34,13 +34,13 @@
                     <p>beautytd2022@gmail.com</p>
                 </div>
                 <div class="flex-sb svg-group">
-                    <a class="header-svg-link" href=""><?php include get_template_directory() .
+                    <a class="header-svg-link" href="https://t.me/beauty_training_design"><?php include get_template_directory() .
                         "/assets/images/svgs/telegram.svg"; ?></a>
-                    <a class="header-svg-link insta" href=""><?php include get_template_directory() .
+                    <a class="header-svg-link insta" href="https://www.instagram.com/beauty4online?igsh=MW53bW96djlmam9pZQ=="><?php include get_template_directory() .
                         "/assets/images/svgs/insta.svg"; ?></a>
-                    <a class="header-svg-link" href=""><?php include get_template_directory() .
+                    <a class="header-svg-link" href="https://www.facebook.com/profile.php?id=100088276970688&mibextid=LQQJ4d"><?php include get_template_directory() .
                         "/assets/images/svgs/fb.svg"; ?></a>
-                    <a class="header-svg-link" href=""><?php include get_template_directory() .
+                    <a class="header-svg-link" href="https://pin.it/2xZ05rpes"><?php include get_template_directory() .
                         "/assets/images/svgs/pininterest.svg"; ?></a>
                 </div>
             </div>
@@ -63,7 +63,7 @@
     </div>
 </div>
 <main class="main centering">
-    <section class="event-list">
+    <section class="event-list" id="events">
         <form method="get" action="<?php echo esc_url(
             home_url("/")
         ); ?>" class="event-filter-form">
@@ -111,7 +111,7 @@
         $ad_img_left = get_field("ad_img_left");
         $ad_img_right = get_field("ad_img_right");
         ?>
-        <div class="carousel-wrapper">
+        <div class="carousel-wrapper" id="partners">
             <div class="carousel-track-container">
                 <ul class="carousel-track">
                 <?php
@@ -142,7 +142,56 @@
             </div>
         </div>
     </section>
+    <section class="steps-section" id="about-us">
+        <h2 class="steps-heading">beauty training<span class="pink-font-color">&design</span></h2>
+        <div class="steps-heading-main-flex-group">
+            <div class="steps-heading__left-flex-group">
+                <?php include get_template_directory() . "/assets/images/svgs/black-line.svg"; ?>
+                <p>Your reliable partner in creating unique styles for beauty professionals and experts.</p>
+            </div>
+            <div class="steps-heading__right-flex-group">
+                <h4>Follow us on social media</h4>
+                <div class="icon-wrapper">
+                    <a class="steps-svg-link insta" href="https://www.instagram.com/beauty4online?igsh=MW53bW96djlmam9pZQ=="><?php include get_template_directory() .
+                        "/assets/images/svgs/insta.svg"; ?></a>
+                    <a class="steps-svg-link" href="https://pin.it/2xZ05rpes"><?php include get_template_directory() .
+                        "/assets/images/svgs/pininterest.svg"; ?></a>
+                </div>
+            </div>
+        </div>
+        <div class="steps-gallery-wrapper">
 
+        </div>
+        <div class="steps-carousel">
+            <div class="steps-carousel-track-container">
+                <ul class="steps-carousel-track">
+                <?php
+                $num_img = 20;
+                $img_found = false;
+
+                for ($i = 1; $i <= $num_img; $i++) {
+                    $image = get_field("steps_carousel_image_" . $i);
+                    if (!$image) {
+                        break;
+                    }
+                    $img_found = true;
+                    ?>
+                    <li class="steps-carousel-slide">
+                        <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>">
+                    </li>
+                    <?php
+                }
+                ?>
+                </ul>
+                <div class="steps-carousel-dots"></div>
+            </div>
+            <button class="steps-carousel-arrow prev"><img src="<?php echo get_template_directory_uri() .
+            "/assets/images/svgs/steps-carousel-arrow-left.svg"; ?>" alt="Arrow pointing to the left"></button>
+            <button class="steps-carousel-arrow next"><img src="<?php echo get_template_directory_uri() .
+            "/assets/images/svgs/steps-carousel-arrow-right.svg"; ?>" alt="Arrow pointing to the right"></button>
+        </div>
+        <h3 class="steps-heading-bottom">Teach stylishly and effortlessly</h3>
+    </section>
 
 </main>
 

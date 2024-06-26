@@ -123,16 +123,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     initAjaxHandler();
 
-    function initCarouselControls() {
-        const track = document.querySelector(".carousel-track");
+    // Partners carousel
+    function initCarouselControls(containerSelector, trackSelector, prevBtnSelector, nextBtnSelector) {
+        const container = document.querySelector(containerSelector);
+        const track = container.querySelector(trackSelector);
         const slides = Array.from(track.children);
-        const prevButton = document.querySelector(".carousel-arrow.prev");
-        const nextButton = document.querySelector(".carousel-arrow.next");
+        const prevButton = document.querySelector(prevBtnSelector);
+        const nextButton = document.querySelector(nextBtnSelector);
 
         const slideWidth = slides[0].getBoundingClientRect().width;
+        const carouselGap = getComputedStyle(container).getPropertyValue("--_carousel-gap").trim().replace("px", "");
 
         const setSlidePosition = (slide, index) => {
-            slide.style.left = (slideWidth + 40) * index + "px";
+            slide.style.left = (slideWidth + parseFloat(carouselGap)) * index + "px";
         };
         slides.forEach(setSlidePosition);
 
@@ -162,14 +165,82 @@ document.addEventListener("DOMContentLoaded", () => {
 
         slides[0].classList.add("current-slide");
     }
-    initCarouselControls();
 
-    window.addEventListener('scroll', function() {
-        const navMenu = document.querySelector('.header-primary');
+    initCarouselControls(
+        ".carousel-track-container",
+        ".carousel-track",
+        ".carousel-arrow.prev",
+        ".carousel-arrow.next"
+    );
+
+    function initStepsCarousel() {
+        const track = document.querySelector(".steps-carousel-track");
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector(".steps-carousel-arrow.next");
+        const prevButton = document.querySelector(".steps-carousel-arrow.prev");
+        const dotsNav = document.querySelector(".steps-carousel-dots");
+
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        let currentSlideIndex = 0;
+
+        const setSlidePosition = (slide, index) => {
+            slide.style.left = slideWidth * index + "px";
+        };
+        slides.forEach(setSlidePosition);
+
+        const moveToSlide = (track, currentSlide, targetSlide) => {
+            track.style.transform = "translateX(-" + targetSlide.style.left + ")";
+            currentSlide.classList.remove("current-slide");
+            targetSlide.classList.add("current-slide");
+        };
+
+        const updateDots = (currentDot, targetDot) => {
+            currentDot.classList.remove("active");
+            targetDot.classList.add("active");
+        };
+
+        const setCurrentSlide = (index) => {
+            const currentSlide = track.querySelector(".current-slide");
+            const targetSlide = slides[index];
+            const currentDot = dotsNav.querySelector(".active");
+            const targetDot = dotsNav.children[index];
+
+            moveToSlide(track, currentSlide, targetSlide);
+            updateDots(currentDot, targetDot);
+            currentSlideIndex = index;
+        };
+
+        slides[0].classList.add("current-slide");
+
+        slides.forEach((_, index) => {
+            const dot = document.createElement("button");
+            dot.classList.add("dot");
+            if (index === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => setCurrentSlide(index));
+            dotsNav.appendChild(dot);
+        });
+
+        nextButton.addEventListener("click", () => {
+            if (currentSlideIndex < slides.length - 1) {
+                setCurrentSlide(currentSlideIndex + 1);
+            }
+        });
+
+        prevButton.addEventListener("click", () => {
+            if (currentSlideIndex > 0) {
+                setCurrentSlide(currentSlideIndex - 1);
+            }
+        });
+    }
+
+    initStepsCarousel();
+    
+    window.addEventListener("scroll", function () {
+        const navMenu = document.querySelector(".header-primary");
         if (window.scrollY > 1000) {
-          navMenu.classList.add('sticky-header');
+            navMenu.classList.add("sticky-header");
         } else {
-          navMenu.classList.remove('sticky-header');
+            navMenu.classList.remove("sticky-header");
         }
-      });
+    });
 });
